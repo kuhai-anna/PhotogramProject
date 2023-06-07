@@ -11,32 +11,31 @@ import bgdImage from "../image/bgd-photo.jpeg";
 
 export const RegistrationScreen = () => {
   return (
-    <View>
-      <ImageBackground
-        source={bgdImage}
-        style={{ width: "100%", height: "100%" }}
-      >
-        <View style={style.container}>
-          <View style={style.form}>
-            <View style={style.avatar}></View>
-            <Text style={style.text}>Реєстрація</Text>
+    <View style={styles.mainContainer}>
+      <ImageBackground source={bgdImage} style={styles.bgdImage}>
+        <View style={styles.container}>
+          <View style={styles.form}>
+            <View style={styles.avatar}>
+              <TouchableOpacity></TouchableOpacity>
+            </View>
+            <Text style={styles.text}>Реєстрація</Text>
             <TextInput
-              style={style.input}
+              style={styles.input}
               placeholder={"Логін"}
               placeholderTextColor={"#BDBDBD"}
-            ></TextInput>
+            />
             <TextInput
-              style={style.input}
+              style={styles.input}
               placeholder={"Адреса електронної пошти"}
               placeholderTextColor={"#BDBDBD"}
-            ></TextInput>
+            />
             <TextInput
-              style={style.input}
+              style={styles.input}
               placeholder={"Пароль"}
               placeholderTextColor={"#BDBDBD"}
-            ></TextInput>
-            <TouchableOpacity style={style.buttonSubmit}>
-              <Text style={style.buttonText}>Зареєструватися</Text>
+            />
+            <TouchableOpacity style={styles.buttonSubmit}>
+              <Text style={styles.buttonText}>Зареєструватися</Text>
             </TouchableOpacity>
             <Button title="Вже є акаунт? Увійти" color={"#1B4371"}></Button>
           </View>
@@ -46,11 +45,32 @@ export const RegistrationScreen = () => {
   );
 };
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    // justifyContent: "center",
+  },
+  bgdImage: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+  },
   container: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+  form: {
+    // position: "relative",
+    paddingTop: 92,
+    width: "100%",
+    height: 549,
+    padding: 16,
+    backgroundColor: "#fff",
+    borderWidth: 2,
+    borderColor: "#fff",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
   avatar: {
     position: "absolute",
@@ -62,18 +82,6 @@ const style = StyleSheet.create({
     height: 120,
     backgroundColor: "#F6F6F6",
     borderRadius: 16,
-  },
-  form: {
-    position: "relative",
-    paddingTop: 92,
-    width: "100%",
-    height: 549,
-    padding: 16,
-    backgroundColor: "#fff",
-    borderWidth: 2,
-    borderColor: "#fff",
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
   },
   text: {
     marginBottom: 32,
