@@ -48,7 +48,6 @@ export const RegistrationScreen = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    // justifyContent: "center",
   },
   bgdImage: {
     flex: 1,
